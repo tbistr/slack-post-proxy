@@ -1,14 +1,8 @@
-const webhookUrl = "_SLACK_WEBHOOK_URL_";
+const proxyURL = "PROXY_URL";
 
-const payload = {
-	text: window.location.href,
-	unfurl_links: true,
-};
-
-fetch(webhookUrl, {
+fetch(proxyURL, {
 	method: "POST",
-	headers: { "Content-Type": "application/json" },
-	body: JSON.stringify(payload),
+	body: window.location.href,
 })
 	.then((response) => {
 		if (response.ok) {
